@@ -1,0 +1,52 @@
+No Laravel, existem várias opções de seleção de itens em consultas de banco de dados usando o Eloquent, além de first e get. Cada uma delas tem um comportamento específico. Aqui estão algumas das opções comuns:
+
+first(): Retorna o primeiro registro que corresponde à consulta. É útil quando você espera apenas um resultado.
+
+Exemplo:
+
+php
+Copy code
+$resultado = Model::where('campo', '=', 'valor')->first();
+get(): Retorna uma coleção de todos os registros que correspondem à consulta. É usado quando você espera vários resultados.
+
+Exemplo:
+
+php
+Copy code
+$resultados = Model::where('campo', '=', 'valor')->get();
+find($id): Retorna um único registro com base no valor da chave primária (geralmente o ID).
+
+Exemplo:
+
+php
+Copy code
+$registro = Model::find($id);
+pluck('coluna'): Retorna o valor de uma coluna específica do primeiro registro correspondente à consulta.
+
+Exemplo:
+
+php
+Copy code
+$valor = Model::where('campo', '=', 'valor')->pluck('coluna');
+select('coluna1', 'coluna2'): Permite selecionar colunas específicas em vez de todas as colunas. Isso é útil quando você deseja recuperar apenas informações específicas.
+
+Exemplo:
+
+php
+Copy code
+$resultados = Model::select('coluna1', 'coluna2')->get();
+pluck('coluna')->toArray(): Retorna um array com os valores de uma coluna específica para todos os registros correspondentes à consulta.
+
+Exemplo:
+
+php
+Copy code
+$valores = Model::where('campo', '=', 'valor')->pluck('coluna')->toArray();
+get(['coluna1', 'coluna2']): Retorna uma coleção de registros contendo apenas as colunas especificadas. Isso é semelhante ao select, mas retorna uma coleção.
+
+Exemplo:
+
+php
+Copy code
+$resultados = Model::where('campo', '=', 'valor')->get(['coluna1', 'coluna2']);
+Essas são algumas das opções comuns para seleção de itens no Eloquen

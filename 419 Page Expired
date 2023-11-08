@@ -1,0 +1,8 @@
+419 Page Expired
+
+Às vezes, problemas de cache ou sessão podem causar erros de "419 Page Expired". Você pode tentar executar os seguintes comandos para limpar o cache e as sessões:
+
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+php artisan session:clear
